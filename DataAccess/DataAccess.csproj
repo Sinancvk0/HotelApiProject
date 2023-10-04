@@ -23,8 +23,4 @@
     <ProjectReference Include="..\Entity\Entity.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Entity Framework\" />
-  </ItemGroup>
-
 </Project>
