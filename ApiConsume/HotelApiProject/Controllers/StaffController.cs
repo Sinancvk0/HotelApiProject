@@ -1,5 +1,6 @@
 ﻿
 using Bussines.Abstract;
+using Entity;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -19,13 +20,13 @@ namespace HotelApiProject.WebApi.Controllers
         [HttpGet]
         public IActionResult StaffList()
         {
-
-            return Ok();
+            var value =_staffService.TGetList();    
+            return Ok(value);
         }
         [HttpPost]
-        public IActionResult AddStaff()
+        public IActionResult AddStaff(Staff staff)
         {
-
+            _staffService.TInsert(staff);
             return Ok();
         }
         [HttpDelete]

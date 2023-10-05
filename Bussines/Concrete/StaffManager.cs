@@ -1,4 +1,5 @@
 ﻿using Bussines.Abstract;
+using DataAccess.Abstract;
 using Entity;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,36 @@ namespace Bussines.Concrete
 {
     public class StaffManager : IStaffService
     {
+        private readonly IStaffDal _staffDal;
+
+        public StaffManager(IStaffDal staffDal)
+        {
+            _staffDal = staffDal;
+        }
+
         public void TDelete(Staff t)
         {
-            throw new NotImplementedException();
+           _staffDal.Delete(t);
         }
 
         public Staff TGetById(int id)
         {
-            throw new NotImplementedException();
+          return _staffDal.GetById(id);
         }
 
         public List<Staff> TGetList()
         {
-            throw new NotImplementedException();
+            return _staffDal.GetList();
         }
 
         public void TInsert(Staff t)
         {
-            throw new NotImplementedException();
+         _staffDal.Insert(t);
         }
 
         public void TUpdate(Staff t)
         {
-            throw new NotImplementedException();
+           _staffDal.Update(t);
         }
     }
 }

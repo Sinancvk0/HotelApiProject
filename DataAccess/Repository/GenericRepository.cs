@@ -19,6 +19,7 @@ namespace DataAccess.Repository
         public void Delete(T t)
         {
             _appDbContext.Remove(t);
+            _appDbContext.SaveChanges();
         }
 
         public T GetById(int id)
@@ -34,11 +35,13 @@ namespace DataAccess.Repository
         public void Insert(T t)
         {
          _appDbContext.Add(t);
+            _appDbContext.SaveChanges();
         }
 
         public void Update(T t)
         {
            _appDbContext.Update(t);
+            _appDbContext.SaveChanges();    
         }
     }
 }
