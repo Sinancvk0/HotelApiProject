@@ -15,10 +15,6 @@ namespace HotelApiProject.WebApi.Controllers
         {
             _serviceService = serviceService;
         }
-
-
-      
-
         [HttpGet]
         public IActionResult ServiceList()
         {

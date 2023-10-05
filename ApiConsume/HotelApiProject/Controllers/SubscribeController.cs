@@ -47,10 +47,11 @@ namespace HotelApiProject.WebApi.Controllers
 
             return Ok();
         }
-        [HttpGet]
+        [HttpGet("id")]
         public IActionResult GetSubscribe(int id)
         {
-            var value= _subscribeService.TGetById(id);
+            var value=_subscribeService.TGetById(id) ;
+
             return Ok(value);
 
         }
