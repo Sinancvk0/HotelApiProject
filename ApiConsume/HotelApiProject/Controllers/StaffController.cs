@@ -30,23 +30,27 @@ namespace HotelApiProject.WebApi.Controllers
             return Ok();
         }
         [HttpDelete]
-        public IActionResult DeleteStaff()
+        public IActionResult DeleteStaff(int id)
         {
+            var values=_staffService.TGetById(id);
+            _staffService.TDelete(values);
 
             return Ok();
         }
         [HttpPut]
-        public IActionResult UpdateStaff()
+        public IActionResult UpdateStaff(Staff staff)
         {
+            _staffService.TUpdate(staff);
             return Ok();
         }
 
 
         [HttpGet("{id}")]
-        public IActionResult GetStaff()
+        public IActionResult GetStaff( int id)
         {
+            var value= _staffService.TGetById(id);  
 
-            return Ok();
+            return Ok(value);
         }
     }
 }
