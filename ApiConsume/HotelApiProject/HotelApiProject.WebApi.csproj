@@ -22,7 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Bussines\Bussines.csproj" />
     <ProjectReference Include="..\..\DataAccess\DataAccess.csproj" />
+    <ProjectReference Include="..\..\Entity\Entity.csproj" />
   </ItemGroup>
 
 </Project>
