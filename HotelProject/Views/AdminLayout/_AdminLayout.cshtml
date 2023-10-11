@@ -6,55 +6,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Quixlab - Bootstrap Admin Dashboard Template by Themefisher.com</title>
-    <!-- Favicon icon -->
-    <link rel="icon" type="~/adminweb/image/png" sizes="16x16" href="images/favicon.png">
-    <!-- Custom Stylesheet -->
-    <link href="~/adminweb/css/style.css" rel="stylesheet">
-
-</head>
+@await Html.PartialAsync("/Views/AdminLayout/HeadPartial.cshtml")
 
 <body>
+    @await Html.PartialAsync("/Views/AdminLayout/PreoloaderPartial.cshtml")
 
-    <!--*******************
-        Preloader start
-    ********************-->
-    <div id="preloader">
-        <div class="loader">
-            <svg class="circular" viewBox="25 25 50 50">
-                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
-            </svg>
-        </div>
-    </div>
-    <!--*******************
-        Preloader end
-    ********************-->
-    <!--**********************************
-        Main wrapper start
-    ***********************************-->
     <div id="main-wrapper">
 
-        <!--**********************************
-            Nav header start
-        ***********************************-->
-        <div class="nav-header">
-            <div class="brand-logo">
-                <a href="index.html">
-                    <b class="logo-abbr"><img src="~/adminweb/images/logo.png" alt=""> </b>
-                    <span class="logo-compact"><img src="~/adminweb//images/logo-compact.png" alt=""></span>
-                    <span class="brand-title">
-                        <img src="~/adminweb/images/logo-text.png" alt="">
-                    </span>
-                </a>
-            </div>
-        </div>
-        <!--**********************************
-            Nav header end
-        ***********************************-->
+    
+        @await Html.PartialAsync("/Views/AdminLayout/NavheaderPartial.cshtml")
+    
         <!--**********************************
             Header start
         ***********************************-->
@@ -349,11 +310,11 @@
                             <i class="icon-note menu-icon"></i><span class="nav-text">Forms</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="~/adminweb/form-basic.html">Basic Form</a></li>
-                            <li><a href="~/adminweb/form-validation.html">Form Validation</a></li>
-                            <li><a href="~/adminweb/form-step.html">Step Form</a></li>
-                            <li><a href="~/adminweb/form-editor.html">Editor</a></li>
-                            <li><a href="~/adminweb/form-picker.html">Picker</a></li>
+                            <li><a href="./form-basic.html">Basic Form</a></li>
+                            <li><a href="./form-validation.html">Form Validation</a></li>
+                            <li><a href="./form-step.html">Step Form</a></li>
+                            <li><a href="./form-editor.html">Editor</a></li>
+                            <li><a href="./form-picker.html">Picker</a></li>
                         </ul>
                     </li>
                     <li class="nav-label">Table</li>
@@ -362,8 +323,8 @@
                             <i class="icon-menu menu-icon"></i><span class="nav-text">Table</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="~/adminweb/table-basic.html" aria-expanded="false">Basic Table</a></li>
-                            <li><a href="~/adminweb/table-datatable.html" aria-expanded="false">Data Table</a></li>
+                            <li><a href="./table-basic.html" aria-expanded="false">Basic Table</a></li>
+                            <li><a href="./table-datatable.html" aria-expanded="false">Data Table</a></li>
                         </ul>
                     </li>
                     <li class="nav-label">Pages</li>
@@ -372,17 +333,17 @@
                             <i class="icon-notebook menu-icon"></i><span class="nav-text">Pages</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="~/adminweb/page-login.html">Login</a></li>
-                            <li><a href="~/adminweb/page-register.html">Register</a></li>
-                            <li><a href="~/adminweb/page-lock.html">Lock Screen</a></li>
+                            <li><a href="./page-login.html">Login</a></li>
+                            <li><a href="./page-register.html">Register</a></li>
+                            <li><a href="./page-lock.html">Lock Screen</a></li>
                             <li>
                                 <a class="has-arrow" href="javascript:void()" aria-expanded="false">Error</a>
                                 <ul aria-expanded="false">
-                                    <li><a href="~/adminweb//page-error-404.html">Error 404</a></li>
-                                    <li><a href="~/adminweb//page-error-403.html">Error 403</a></li>
-                                    <li><a href="~/adminweb//page-error-400.html">Error 400</a></li>
-                                    <li><a href="~/adminweb//page-error-500.html">Error 500</a></li>
-                                    <li><a href="~/adminweb//page-error-503.html">Error 503</a></li>
+                                    <li><a href="./page-error-404.html">Error 404</a></li>
+                                    <li><a href="./page-error-403.html">Error 403</a></li>
+                                    <li><a href="./page-error-400.html">Error 400</a></li>
+                                    <li><a href="./page-error-500.html">Error 500</a></li>
+                                    <li><a href="./page-error-503.html">Error 503</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -451,5 +412,3 @@
 </body>
 
 </html>
-
-      

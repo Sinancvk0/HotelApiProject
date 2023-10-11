@@ -15,5 +15,17 @@ namespace HotelProject.Controllers
             return PartialView();   
         }
 
+        public  PartialViewResult PreoloaderPartial()
+        {
+
+            return PartialView();   
+        }
+
+        public PartialViewResult NavheaderPartial()
+        {
+
+            return PartialView();
+        }
+
     }
 }
