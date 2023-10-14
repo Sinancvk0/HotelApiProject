@@ -14,13 +14,13 @@ namespace HotelProject.Controllers
             _httpClientFactory = httpClientFactory;
         }
 
-        public async Task< IActionResult> Index()
+        public async Task<IActionResult> Index()
         {
-            var  client =_httpClientFactory.CreateClient();
+            var client = _httpClientFactory.CreateClient();
             var responseMessage = await client.GetAsync("http://localhost:5199/api/Staff");
             if (responseMessage.IsSuccessStatusCode)
             {
-                var jsonData=await responseMessage.Content.ReadAsStringAsync();
+                var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<List<StaffViewModel>>(jsonData);
                 return View(values);
 
@@ -33,15 +33,15 @@ namespace HotelProject.Controllers
 
             return View();
         }
-        [HttpPost]  
-        public async Task< IActionResult> AddStaff(AddStaffViewModel model)
+        [HttpPost]
+        public async Task<IActionResult> AddStaff(AddStaffViewModel model)
         {
 
-            var client=_httpClientFactory.CreateClient();
+            var client = _httpClientFactory.CreateClient();
 
-            var jsonData=JsonConvert.SerializeObject(model);
+            var jsonData = JsonConvert.SerializeObject(model);
 
-            StringContent stringContent = new StringContent(jsonData,Encoding.UTF8,"application/json");
+            StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
 
             var responseMessage = await client.PostAsync("http://localhost:5199/api/Staff", stringContent);
 
@@ -51,9 +51,20 @@ namespace HotelProject.Controllers
 
             }
 
-            return View();  
-            
+            return View();
 
+
+        }
+
+        public async Task<IActionResult> DeleteStaff(int id)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var responsemessage = await client.DeleteAsync($"http://localhost:5199/api/staff/{id}");
+            if (responsemessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+            }
+            return View();
         }
     }
 }
