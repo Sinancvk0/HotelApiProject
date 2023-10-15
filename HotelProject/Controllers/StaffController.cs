@@ -88,6 +88,23 @@ namespace HotelProject.Controllers
 
         }
 
+        public async Task<IActionResult> UpdateStaff(UpdateViewModel staffupdate)
+        {
+            var client = _httpClientFactory.CreateClient();
+            var jsonData=JsonConvert.SerializeObject(staffupdate);
+            StringContent stringContent=new StringContent(jsonData,Encoding.UTF8,"application/json");
+            var responseMessage = await client.PutAsync("http://localhost:5199/api/staff/",stringContent);
+
+            if (responseMessage.IsSuccessStatusCode)
+            {
+                return RedirectToAction("Index");
+
+
+            }
+            return View();
+
+        }
+
 
 
     }
