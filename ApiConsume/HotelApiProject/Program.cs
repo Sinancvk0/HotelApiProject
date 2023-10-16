@@ -8,6 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("connstr")));
 
 ExtensionsDb.ContainerDependecies(builder.Services);
+builder.Services.AddAutoMapper(typeof(Program));
 //Consume edilen Alan
 builder.Services.AddCors(opt =>
 {
