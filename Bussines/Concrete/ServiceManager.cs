@@ -1,4 +1,5 @@
 ﻿using Bussines.Abstract;
+using DataAccess.Abstract;
 using Entity;
 using System;
 using System.Collections.Generic;
@@ -10,29 +11,36 @@ namespace Bussines.Concrete
 {
     public class ServiceManager : IServiceService
     {
+        private readonly IServiceDal _service;
+
+        public ServiceManager(IServiceDal service)
+        {
+            _service = service;
+        }
+
         public void TDelete(Service t)
         {
-            throw new NotImplementedException();
+           _service.Delete(t);
         }
 
         public Service TGetById(int id)
         {
-            throw new NotImplementedException();
+         return _service.GetById(id);   
         }
 
         public List<Service> TGetList()
         {
-            throw new NotImplementedException();
+          return _service.GetList();    
         }
 
         public void TInsert(Service t)
         {
-            throw new NotImplementedException();
+         _service.Insert(t);
         }
 
         public void TUpdate(Service t)
         {
-            throw new NotImplementedException();
+          _service.Update(t);   
         }
     }
 }
